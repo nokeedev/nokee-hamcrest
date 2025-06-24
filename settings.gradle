@@ -1,0 +1,23 @@
+rootProject.name = 'nokee-hamcrest'
+
+dependencyResolutionManagement {
+	repositoriesMode = RepositoriesMode.PREFER_SETTINGS
+	repositories {
+		mavenCentral()
+	}
+}
+
+gradle.allprojects {
+	group = 'dev.nokee.commons'
+
+	pluginManager.withPlugin('java-base') {
+		java {
+			sourceCompatibility = JavaVersion.VERSION_1_8
+			targetCompatibility = JavaVersion.VERSION_1_8
+		}
+
+		ext {
+			gradleApi = { version -> "dev.gradleplugins:gradle-api:$version" }
+		}
+	}
+}
